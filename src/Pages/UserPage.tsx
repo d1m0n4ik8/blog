@@ -9,7 +9,7 @@ const UserPage = () => {
       <Loader />
    ) : (
       <div>
-         <div>{user?.image}</div>
+         <img src={user?.image} alt="user" />
          <div>{user?.firstName}</div>
          <div>{user?.lastName}</div>
       </div>

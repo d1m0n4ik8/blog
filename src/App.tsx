@@ -8,7 +8,7 @@ const App = () => {
    return (
       <div className="w-full h-screen">
          <Header />
-         <main className="container mx-auto px-10 pt-24">
+         <main className="container mx-auto pt-24 px-8 lg:px-24 xl:px-60">
             <Routes>
                <Route path="/" element={<div className="w-100 w-full">Aaa</div>}></Route>
                <Route path="/posts" element={<PostsPage />}></Route>

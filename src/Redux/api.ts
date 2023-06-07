@@ -9,8 +9,8 @@ export const postsApi = createApi({
       baseUrl: 'https://dummyjson.com/',
    }),
    endpoints: (builder) => ({
-      getAllPosts: builder.query<IPostData, void>({
-         query: () => 'posts?limit=5',
+      getAllPosts: builder.query<IPostData, { skip: number; limit: number }>({
+         query: ({ skip, limit }) => `posts?limit=${limit}&skip=${skip}`,
       }),
       getUserById: builder.query<IUser, number>({
          query: (postId) => `users/${postId}`,
