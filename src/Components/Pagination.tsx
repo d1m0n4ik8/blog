@@ -13,11 +13,10 @@ const Pagination: FC<PropsType> = ({ currentPage, total, changePage, limit }) =>
    for (let i = 1; i <= pagesAmount; i++) {
       pages.push(i)
    }
-   console.log(pages.length)
 
-   let left = currentPage - 5 //19
-   let right = currentPage + 5 //29
-   if (left <= 0) right = right - left + 1
+   let left = currentPage - 5
+   let right = currentPage + 5
+   if (left <= 0) right = right - left
    if (pages.length < right) left -= right - pages.length
    return (
       <div className="flex justify-center">
@@ -25,13 +24,17 @@ const Pagination: FC<PropsType> = ({ currentPage, total, changePage, limit }) =>
             .filter((p) => (p > left && p <= right) || p > pages.length - 2)
             .map((p) =>
                p === right && p < pages.length - 2 ? (
-                  <button key={p} disabled className={`p-2 border-2 ml-2`} onClick={() => changePage(p)}>
+                  <button
+                     key={p}
+                     disabled
+                     className={`p-2 border-2 border-violet-600 ml-2`}
+                     onClick={() => changePage(p)}>
                      ...
                   </button>
                ) : (
                   <button
                      key={p}
-                     className={`p-2 border-2 ml-2 ${p === currentPage && 'bg-red-500'}`}
+                     className={`p-2 border-2 border-violet-600 ml-2 ${p === currentPage && 'bg-violet-600'}`}
                      onClick={() => changePage(p)}>
                      {p}
                   </button>

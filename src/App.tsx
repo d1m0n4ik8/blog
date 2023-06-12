@@ -6,9 +6,9 @@ import UserPage from './Pages/UserPage'
 
 const App = () => {
    return (
-      <div className="w-full h-screen">
+      <div className="flex flex-col min-h-screen bg-zinc-800 text-white">
          <Header />
-         <main className="container mx-auto pt-24 px-8 lg:px-24 xl:px-60">
+         <main className="container flex-grow mx-auto pt-24 px-8 pb-8 lg:px-24 xl:px-60">
             <Routes>
                <Route path="/" element={<div className="w-100 w-full">Aaa</div>}></Route>
                <Route path="/posts" element={<PostsPage />}></Route>
