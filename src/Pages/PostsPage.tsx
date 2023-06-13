@@ -29,26 +29,28 @@ const PostsPage: FC = () => {
    )
    return (
       <>
+         <div className="flex max-w-fit border-2 mb-4 bg-violet-700 border-violet-700 rounded-lg text-violet-700 items-center overflow-hidden">
+            <FaSearch className="text-white w-8 " />
+            <input
+               prefix={'123'}
+               value={searchString}
+               onChange={onSearch}
+               className="text-violet-600 placeholder:text-violet-600 p-2 focus:border-none"
+               placeholder="Search post"
+            />
+         </div>
          {isLoading ? (
             <Loader />
-         ) : posts ? (
+         ) : posts?.length ? (
             <div>
-               <div className="flex max-w-fit border-2 mb-4 bg-violet-700 border-violet-700 rounded-lg text-violet-700 items-center overflow-hidden">
-                  <FaSearch className="text-white w-8 " />
-                  <input
-                     prefix={'123'}
-                     value={searchString}
-                     onChange={onSearch}
-                     className="text-violet-600 placeholder:text-violet-600 p-2 focus:border-none"
-                     placeholder="Search post"
-                  />
-               </div>
                {posts.map((post) => (
                   <Post post={post} key={post.id} />
                ))}
             </div>
          ) : (
-            <div>empty</div>
+            <div className="flex justify-center">
+               <img className="w-1/3" src="https://hajde.media/img/no-results.png" alt="empty" />
+            </div>
          )}
          <Pagination currentPage={currentPage} changePage={changePage} limit={limit} total={data ? data.total : 0} />
       </>

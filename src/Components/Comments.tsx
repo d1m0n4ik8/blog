@@ -1,17 +1,21 @@
-import { FC, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 import { useAddNewCommentMutation, useGetCommentsByPostIdQuery } from '../Redux/api'
 import { Comment } from './Comment'
 import { IComment } from '../Interfaces/IComment'
+import Loader from './Loader'
 type PropsType = {
    postId: number
 }
 export const Comments: FC<PropsType> = ({ postId }) => {
-   const { data: commentsData } = useGetCommentsByPostIdQuery(postId)
+   const { data: commentsData, isLoading } = useGetCommentsByPostIdQuery(postId)
    const [comments, setComments] = useState(commentsData ? commentsData.comments : [])
    const [addComment, { data }] = useAddNewCommentMutation()
    const [newCommentText, setNewCommentText] = useState('')
    useState()
    console.log(data)
+   useEffect(() => {
+      if (commentsData) setComments(commentsData.comments)
+   }, [commentsData])
 
    const addNewComment = async () => {
       if (newCommentText) {
@@ -36,9 +40,17 @@ export const Comments: FC<PropsType> = ({ postId }) => {
          <button className="bg-violet-600 px-4 py-2 text-white rounded-xl" onClick={addNewComment}>
             Add
          </button>
-         {comments.map((comment: IComment) => (
-            <Comment key={comment.id} comment={comment} />
-         ))}
+         {isLoading ? (
+            <div className="flex justify-center">
+               <Loader />
+            </div>
+         ) : comments.length ? (
+            comments.map((comment: IComment) => <Comment key={comment.id} comment={comment} />)
+         ) : (
+            <div className="flex justify-center items-center flex-col">
+               <div>No comments</div>
+            </div>
+         )}
       </div>
    )
 }
