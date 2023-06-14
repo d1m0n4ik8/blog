@@ -8,10 +8,25 @@ const UserPage = () => {
    return isLoading ? (
       <Loader />
    ) : (
-      <div>
-         <img src={user?.image} alt="user" />
-         <div>{user?.firstName}</div>
-         <div>{user?.lastName}</div>
+      <div className="flex justify-between">
+         <div className="flex w-full">
+            <div className="w-1/3">
+               <img
+                  className="w-3/4 h-auto object-contain ring-2 ring-violet-600 rounded-full"
+                  src={user?.image}
+                  alt="user"
+               />
+            </div>
+            <div className="w-2/3 text-3xl p-4">
+               <div className="text-center">User info</div>
+               <div className="mb-3">@{user?.username}</div>
+               <div className="mb-3">{user?.firstName}</div>
+               <div className="mb-3">{user?.lastName}</div>
+               <div className="mb-3">{user?.maidenName}</div>
+               <div className="mb-3">{user?.company.name}</div>
+               <div className="mb-3">{user?.phone}</div>
+            </div>
+         </div>
       </div>
    )
 }

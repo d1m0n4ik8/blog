@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { IPostData } from '../Interfaces/IPost'
-import { IUser } from '../Interfaces/IUser'
+import { IUser, IUsersData } from '../Interfaces/IUser'
 import { IComment, ICommentData } from '../Interfaces/IComment'
 
 export const postsApi = createApi({
@@ -15,6 +15,12 @@ export const postsApi = createApi({
             searchString
                ? `posts/search?q=${searchString}&limit=${limit}&skip=${skip}`
                : `posts?limit=${limit}&skip=${skip}`,
+      }),
+      getAllUsers: builder.query<IUsersData, { skip: number; limit: number; searchString: string }>({
+         query: ({ skip, limit, searchString }) =>
+            searchString
+               ? `users/search?q=${searchString}&limit=${limit}&skip=${skip}`
+               : `users?limit=${limit}&skip=${skip}`,
       }),
       getUserById: builder.query<IUser, number>({
          query: (postId) => `users/${postId}`,
@@ -41,5 +47,10 @@ export const postsApi = createApi({
    }),
 })
 
-export const { useGetAllPostsQuery, useGetUserByIdQuery, useGetCommentsByPostIdQuery, useAddNewCommentMutation } =
-   postsApi
+export const {
+   useGetAllPostsQuery,
+   useGetAllUsersQuery,
+   useGetUserByIdQuery,
+   useGetCommentsByPostIdQuery,
+   useAddNewCommentMutation,
+} = postsApi

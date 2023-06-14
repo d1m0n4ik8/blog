@@ -10,6 +10,9 @@ const Header = () => {
             <Link className="hover:text-violet-600 text-lg transition-all" to="/posts">
                Posts
             </Link>
+            <Link className="hover:text-violet-600 text-lg transition-all" to="/users">
+               Users
+            </Link>
             <Link className="hover:text-violet-600 text-lg transition-all" to="/about">
                About
             </Link>

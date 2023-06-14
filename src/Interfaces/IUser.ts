@@ -59,3 +59,9 @@ export interface IUser {
    ssn: string
    userAgent: string
 }
+export interface IUsersData {
+   users: IUser[]
+   total: number
+   skip: number
+   limit: number
+}
