@@ -1,8 +1,8 @@
 import { FC, useCallback, useState } from 'react'
-import Loader from '../Components/Loader'
+import Loader from '../Components/UIComponents/Loader'
 import { useGetAllPostsQuery } from '../Redux/api'
-import { Post } from '../Components/Post'
-import Pagination from '../Components/Pagination'
+import { Post } from '../Components/Layout/Main/Post'
+import Pagination from '../Components/UIComponents/Pagination'
 import { FaSearch } from 'react-icons/fa'
 
 const PostsPage: FC = () => {

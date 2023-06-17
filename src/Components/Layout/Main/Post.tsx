@@ -1,11 +1,11 @@
-import { IPost } from '../Interfaces/IPost'
-import { useGetUserByIdQuery } from '../Redux/api'
+import { IPost } from '../../../Interfaces/IPost'
+import { useGetUserByIdQuery } from '../../../Redux/api'
 import { NavLink } from 'react-router-dom'
 import { FC, useState } from 'react'
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai'
 import { AiOutlineComment } from 'react-icons/ai'
-import { Comments } from './Comments'
-import Modal from './Modal'
+import { Comments } from './CommentsList'
+import Modal from '../../UIComponents/Modal'
 type PropsType = {
    post: IPost
 }

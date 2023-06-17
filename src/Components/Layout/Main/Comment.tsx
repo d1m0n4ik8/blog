@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
-import { IComment } from '../Interfaces/IComment'
-import { useGetUserByIdQuery } from '../Redux/api'
+import { IComment } from '../../../Interfaces/IComment'
+import { useGetUserByIdQuery } from '../../../Redux/api'
 import { FC } from 'react'
 
 type PropsType = {

@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { IUser } from '../Interfaces/IUser'
+import { IUser } from '../../../Interfaces/IUser'
 import { NavLink } from 'react-router-dom'
 
 type PropsType = {

@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom'
 import { useGetUserByIdQuery } from '../Redux/api'
-import Loader from '../Components/Loader'
+import Loader from '../Components/UIComponents/Loader'
 
 const UserPage = () => {
    const { userId } = useParams()

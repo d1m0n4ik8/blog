@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
-import Footer from './Components/Footer'
-import Header from './Components/Header'
+import Footer from './Components/Layout/Footer/Footer'
+import Header from './Components/Layout/Header/Header'
 import PostsPage from './Pages/PostsPage'
 import UserPage from './Pages/UserPage'
 import Home from './Pages/Home'

@@ -1,8 +1,8 @@
 import { FC, useEffect, useState } from 'react'
-import { useAddNewCommentMutation, useGetCommentsByPostIdQuery } from '../Redux/api'
+import { useAddNewCommentMutation, useGetCommentsByPostIdQuery } from '../../../Redux/api'
 import { Comment } from './Comment'
-import { IComment } from '../Interfaces/IComment'
-import Loader from './Loader'
+import { IComment } from '../../../Interfaces/IComment'
+import Loader from './../../UIComponents/Loader'
 type PropsType = {
    postId: number
 }

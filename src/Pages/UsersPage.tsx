@@ -1,8 +1,8 @@
 import { FaSearch } from 'react-icons/fa'
-import Loader from '../Components/Loader'
-import User from '../Components/User'
+import Loader from '../Components/UIComponents/Loader'
+import User from '../Components/Layout/Main/User'
 import { useGetAllUsersQuery } from '../Redux/api'
-import Pagination from '../Components/Pagination'
+import Pagination from '../Components/UIComponents/Pagination'
 import { useCallback, useState } from 'react'
 
 const UsersPage = () => {
