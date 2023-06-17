@@ -5,6 +5,7 @@ import PostsPage from './Pages/PostsPage'
 import UserPage from './Pages/UserPage'
 import Home from './Pages/Home'
 import UsersPage from './Pages/UsersPage'
+import About from './Pages/About'
 
 const App = () => {
    return (
@@ -14,7 +15,7 @@ const App = () => {
             <Routes>
                <Route path="/" element={<Home />} />
                <Route path="/posts" element={<PostsPage />} />
-               <Route path="/about" element={<div className="w-100 w-full">About</div>} />
+               <Route path="/about" element={<About />} />
                <Route path="/users" element={<UsersPage />} />
                <Route path="/users">
                   <Route path=":userId" element={<UserPage />} />
